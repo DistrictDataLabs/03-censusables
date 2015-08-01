@@ -5,9 +5,11 @@ I used the anacondan distribution abd used conda to install:
 - gdal
 - shapely
 - pyproj
+- BTrees
 
 """
 import argparse
+import BTrees
 import json
 import osgeo.ogr
 import pyproj
@@ -40,14 +42,40 @@ def main():
     layer = geo.GetLayer(0)
     proj = pyproj.Proj(layer.GetSpatialRef().ExportToProj4())
     features = []
+    features_minx = BTrees.IIBTree.BTree()
+    features_miny = BTrees.IIBTree.BTree()
+    features_maxx = BTrees.IIBTree.BTree()
+    features_maxy = BTrees.IIBTree.BTree()
     print('gathering features')
     for i in range(layer.GetFeatureCount()):
         feature = layer.GetFeature(i)
+        if not args.shape_field:
+            print(sorted(feature.keys()))
+            return
         shape_fields = dict((name, feature[name]) for name in args.shape_field)
         geometry = shapely.wkt.loads(feature.GetGeometryRef().ExportToWkt())
+
+        (minx, miny, maxx, maxy) = map(int, geometry.bounds)
+        maxx += 1
+        maxy += 1
+
+        fid = len(features)
+
+        while minx in features_minx:
+            minx -= 1
+        features_minx[minx] = fid
+        while miny in features_miny:
+            miny -= 1
+        features_miny[miny] = fid
+        while maxx in features_maxx:
+            maxx += 1
+        features_maxx[maxx] = fid
+        while maxy in features_maxy:
+            maxy += 1
+        features_maxy[maxy] = fid
         features.append((shape_fields, geometry))
 
-    print('joining')
+    print('joining with %s features' % len(features))
     with open(args.output, 'w') as output:
         with open(args.output+'.failed', 'w') as failed:
             with open(args.datafile) as datafile:
@@ -55,7 +83,23 @@ def main():
                     data = json.loads(line)
                     p = shapely.geometry.Point(
                         *proj(data['longitude'], data['latitude']))
-                    for shape_fields, geometry in features:
+
+                    x = int(p.x)
+                    y = int(p.y)
+                    # features without minx > x
+                    pset = set(features_minx.values(None, x+1))
+                    # intersect features without miny > y
+                    pset = pset.intersection(
+                        set(features_miny.values(None, y+1)))
+                    # intersect features without maxx < x
+                    pset = pset.intersection(
+                        set(features_maxx.values(x-1)))
+                    # intersect features without maxy < y
+                    pset = pset.intersection(
+                        set(features_maxy.values(y-1)))
+
+                    for fid in pset:
+                        shape_fields, geometry = features[fid]
                         if geometry.contains(p):
                             outd = shape_fields.copy()
                             outd.update((name, data[name])
