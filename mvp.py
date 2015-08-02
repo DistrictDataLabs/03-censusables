@@ -32,7 +32,7 @@ plt.figure().add_subplot(1,1,1)
 reviews_by_year.plot(kind='bar').set_title('Yelp review counts by year.')
 plt.savefig('reviews_by_year.svg')
 
-# Load reviews and reduce to business-year review counts
+# Reduce reviews to business-year review counts
 reviews = (reviews[['stars']]
            .groupby([reviews.business_id, reviews.YEAR])
            .count()
