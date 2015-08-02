@@ -114,7 +114,7 @@ ax.set_title("Yelp review rate by fraction young and old for multiple years")
 ax.legend()
 plt.savefig('reviews_fraction_young_and_old_multiyear.svg')
 
-# Well, no obvoid pattern there. Perhaps it would be clearer if we
+# Well, no obvious pattern there. Perhaps it would be clearer if we
 # aggregate by year.
 census4 = (census[census.columns[1:]]
            .groupby(census.GISJOIN)
