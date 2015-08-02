@@ -157,14 +157,14 @@ plt.savefig('reviews_by_category.svg')
 # Yup, the most popular yelp categories are those that are likely to
 # be prety important in Las Vegas.
 
-# This data isn't really telling is very much.  We need to think about
+# This data isn't really telling us very much.  We need to think about
 # the Las Vehas issue. It's likely that yelp activity is qualitatively
 # different there. Perhaps there's a way to test that.
 
 # We probably need to go to ACS 5-year data so we could get more
 # geographic diversity.  We feared that demographics would change too
 # much over the 5 year period. We can test that by looking at the
-# ration of standard deviation to mean over time for out demographic data.
+# ratio of standard deviation to mean over time for out demographic data.
 
 def std_by_mean(a):
     return a.std() / a.mean()
@@ -188,7 +188,7 @@ plt.subplots_adjust(bottom=.2)
 plt.savefig('variability.svg')
 
 # The variability is generally pretty low, although it's high for some
-# demographic county compination. Then again, some of the demographic
+# demographic county compinations. Then again, some of the demographic
 # categories are pretty small and thus subject to lots of variation.
 # The variability in larger categories (e.g. yound and old) is pretty
 # small.
