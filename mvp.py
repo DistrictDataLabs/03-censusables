@@ -60,8 +60,8 @@ census = (pd.read_csv(args.census2010),
           )
 
 # Select the columns we want and concat.  This is awkward, because
-# 1) column names for demographoc data are different accross years, and
-# 2) when I downloaded 2013, i didn't ask for unweigthed totals.  This is
+# 1) column names for demographic data are different across years, and
+# 2) when I downloaded 2013, i didn't ask for unweighted totals.  This is
 # an easy mistake to make. But I know I want GISJOIN, YEAR and the last 49
 # columns, so...
 census = [c[['GISJOIN', 'YEAR'] + list(c.columns[-49:])] for c in census]
@@ -138,7 +138,7 @@ plt.savefig('reviews_by_county.svg')
 
 # The reviews are dominated by a single county, which is Clark County,
 # NV, which includes Las Vegas.  Hm.  Yelp reviews are probably
-# concentrated in just the sort of businesses that are prominant in
+# concentrated in just the sort of businesses that are prominent in
 # Las Vegas.  Let's look at yelp reviews by category. The category is
 # in an array value.
 cats = []
@@ -155,10 +155,10 @@ plt.subplots_adjust(bottom=.4)
 plt.savefig('reviews_by_category.svg')
 
 # Yup, the most popular yelp categories are those that are likely to
-# be prety important in Las Vegas.
+# be pretty important in Las Vegas.
 
 # This data isn't really telling us very much.  We need to think about
-# the Las Vehas issue. It's likely that yelp activity is qualitatively
+# the Las Vegas issue. It's likely that yelp activity is qualitatively
 # different there. Perhaps there's a way to test that.
 
 # We probably need to go to ACS 5-year data so we could get more
@@ -188,7 +188,7 @@ plt.subplots_adjust(bottom=.2)
 plt.savefig('variability.svg')
 
 # The variability is generally pretty low, although it's high for some
-# demographic county compinations. Then again, some of the demographic
+# demographic county combinations. Then again, some of the demographic
 # categories are pretty small and thus subject to lots of variation.
-# The variability in larger categories (e.g. yound and old) is pretty
+# The variability in larger categories (e.g. young and old) is pretty
 # small.
