@@ -45,9 +45,6 @@ Note: Geospatial join process can be reviewed in geojoin.py.
 Observations and Conclusions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - There is no apparent relationship between age group and response rate during a single year.
-- There is no apparent relationship between these two factors when four year mean values are
-used, though there are a few outstanding values.
+- There is no apparent relationship between these two factors when four year mean values are used, though there are a few outstanding values.
 - Yelp reviews are concentrated in Hospitality-related businesses (hotels, food, restaurants, etc).
-- When reviewed by location, Yelp reviews are primarily focused in a single location,
-Clark County (Las Vegas).  This is understandable, given the greater proportion of businesses of
-type more commonly reviewed on Yelp (see previous comment).
+- When reviewed by location, Yelp reviews are primarily focused in a single location, Clark County (Las Vegas).  This is understandable, given the greater proportion of businesses of the type more commonly reviewed on Yelp (see previous comment).
