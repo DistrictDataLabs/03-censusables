@@ -2,8 +2,6 @@
 DDL Incubator 3, Team 7, Censusables
 ====================================
 
-
-
 MVP Analysis
 ============
 
@@ -52,6 +50,7 @@ Observations and Conclusions
 - Yelp reviews are concentrated in Hospitality-related businesses (hotels, food, restaurants, etc).
 - When reviewed by location, Yelp reviews are primarily focused in a single location, Clark County (Las Vegas).  This is understandable, given the greater proportion of businesses of the type more commonly reviewed on Yelp (see previous comment).
 
+The script used for this analysis is `mvp.py <mvp.py>`_
 Images:
 
 .. image:: reviews_by_year.png
