@@ -29,7 +29,12 @@ Key Assumptions
 2. Quantity of Yelp reviews will increase over time.
 
 Both assumptions were confirmed.  The latter was clear after simple 
-data exploration; for the former, low variability was observed over 
+data exploration;
+
+.. image:: reviews_by_year.svg
+
+
+for the former, low variability was observed over 
 time by calculating the standard deviation of proportional age groups 
 divided by the mean.
 
@@ -37,6 +42,9 @@ Process
 ~~~~~~~
 1. Normalize age to fraction of population
 2. Calculate number of reviews per county per year
+
+   .. image:: reviews_by_county.svg
+
 3. Plot and compare response rate by age group (young [18 - 34] and old [35+])
 4. Compare response rate per age group by geographic location
 
