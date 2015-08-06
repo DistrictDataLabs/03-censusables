@@ -124,7 +124,7 @@ for (y, color) in zip(range(2010, 2014), 'rgmc'):
     ax[0].scatter(cy.young, cy.reviews, c=color, label=str(y))
     ax[1].scatter(cy.old,   cy.reviews, c=color, label=str(y))
 ax[0].legend()
-ax[1].legend()
+ax[1].legend(loc=3)
 ax[0].set_title("Yelp review rate by fraction young for multiple years" + wolv)
 ax[1].set_title("Yelp review rate by fraction old for multiple years" + wolv)
 
