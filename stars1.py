@@ -32,31 +32,23 @@ imsuff = '.' + args.image_format
 reviews = pd.DataFrame(json.loads(l) for l in open(args.reviews))
 reviews['YEAR'] = reviews.date.str.slice(0, 4).astype('int64')
 
-# Show review counts by year:
-reviews_by_year = reviews.YEAR.value_counts()
-plt.figure().add_subplot(1,1,1)
-reviews_by_year.plot(kind='bar').set_title('Yelp review counts by year.')
-plt.savefig('reviews_by_year' + imsuff)
-
-# Reduce reviews to business-year review counts
-reviews = (reviews[['stars']]
-           .groupby([reviews.business_id, reviews.YEAR])
-           .count()
-           .reset_index()
-           )
-# Fix column names
-reviews.columns = 'business_id YEAR reviews'.split()
+# # Reduce reviews to business-year review averages
+# reviews = (reviews[['stars']]
+#            .groupby([reviews.business_id, reviews.YEAR])
+#            .mean()
+#            .reset_index()
+#            )
 
 # Load the geo join data and join with the reviews
 join = pd.DataFrame(json.loads(l) for l in open(args.join))
 if args.no_vegas:
     join = join[join.GISJOIN.apply(lambda g: not g.startswith('G32'))]
-reviews = reviews.merge(join)
+bus_reviews = reviews[['business_id', 'YEAR', 'stars']].merge(join)
 
-# Get review counts by GISJOIN and year
-reviews = (reviews[['reviews']]
-           .groupby([reviews.GISJOIN, reviews.YEAR])
-           .sum()
+# Get review means by GISJOIN and year
+reviews = (bus_reviews[['stars']]
+           .groupby([bus_reviews.GISJOIN, bus_reviews.YEAR])
+           .mean()
            .reset_index()
            )
 
@@ -106,29 +98,26 @@ for n in '''
 yo = census.groupby(age_groups, axis=1).sum()
 census = pd.concat((census, yo), axis=1)
 
-# Join with reviews
-census = census.merge(reviews)
-
 # Normalize by total population
 norm = census[census.columns[3:]].div(census.TOTAL, axis=0)
 census = pd.concat((census[census.columns[:3]], norm), axis=1)
+
+# Join with reviews
+census = census.merge(reviews)
 
 # Whew, now we're ready to explore relationships. Plot response
 # rate vs age-group fraction for young and old.
 fig, ax = plt.subplots(2, 1)
 
-ax[0].set_yscale('log')
-ax[1].set_yscale('log')
-for (y, color) in zip(range(2010, 2014), 'rgmc'):
-    cy = census[census.YEAR == y]
-    ax[0].scatter(cy.young, cy.reviews, c=color, label=str(y))
-    ax[1].scatter(cy.old,   cy.reviews, c=color, label=str(y))
-ax[0].legend()
-ax[1].legend()
-ax[0].set_title("Yelp review rate by fraction young for multiple years" + wolv)
-ax[1].set_title("Yelp review rate by fraction old for multiple years" + wolv)
+ax[0].scatter(census.young, census.stars, c='r', label='young')
+ax[0].set_title("Yelp review means by fraction young for multiple years"
+             + wolv)
 
-plt.savefig(oname+'reviews_fraction_young_and_old_multiyear' + imsuff)
+ax[1].scatter(census.old,   census.stars, c='b', label='old')
+ax[1].set_title("Yelp review means by fraction old for multiple years"
+             + wolv)
+
+plt.savefig(oname+'review_means_young_and_old_multiyear' + imsuff)
 
 # Well, no obvious pattern there. Perhaps it would be clearer if we
 # aggregate by year.
@@ -138,29 +127,23 @@ census4 = (census[census.columns[1:]]
            )
 c4 = census4.reset_index()
 fig, ax = plt.subplots(2, 1)
-ax[0].set_yscale('log')
-ax[1].set_yscale('log')
-ax[0].scatter(census4.young, census4.reviews, c='r', label='young')
-ax[1].scatter(census4.old,   census4.reviews, c='b', label='old')
-ax[0].set_title("Yelp review rate by fraction young mean over 4 years"
+ax[0].scatter(census4.young, census4.stars, c='r', label='young')
+ax[1].scatter(census4.old,   census4.stars, c='b', label='old')
+ax[0].set_title("Yelp review mean by fraction young mean over 4 years"
              + wolv)
-ax[1].set_title("Yelp review rate by fraction old mean over 4 years"
+ax[1].set_title("Yelp review mean by fraction old mean over 4 years"
              + wolv)
 
-for index, row in c4[c4.reviews > .01].iterrows():
-    ax[0].text(row['young'], row['reviews'], row['GISJOIN'])
-    ax[1].text(row['old'], row['reviews'], row['GISJOIN'])
-
-plt.savefig(oname+'reviews_fraction_young_and_old_mean' + imsuff)
+plt.savefig(oname+'review_means_young_and_old_mean' + imsuff)
 
 # Nope, wtf that weird peak in the middle.  There must be some other
 # effect.  We only have 15 counties.  Let's see how reviews are
 # distributed among them:
 ax = plt.figure().add_subplot(1,1,1)
-census4.reviews.plot(kind='bar')
-ax.set_title("Reviews by county" + wolv)
+census4.stars.plot(kind='bar')
+ax.set_title("Review means by county" + wolv)
 plt.subplots_adjust(bottom=.2)
-plt.savefig(oname+'reviews_by_county' + imsuff)
+plt.savefig(oname+'mean_reviews_by_county' + imsuff)
 
 # The reviews are dominated by a single county, which is Clark County,
 # NV, which includes Las Vegas.  Hm.  Yelp reviews are probably
@@ -171,50 +154,11 @@ cats = []
 for d in (json.loads(l) for l in open(args.businesses)):
     for c in d['categories']:
         cats.append(dict(business_id = d['business_id'], category=c))
-cats = pd.DataFrame(cats)
-cats = cats.category.value_counts()
-cats.name = 'reviews'
+cats = pd.DataFrame(cats).merge(bus_reviews)
+cats = cats[['stars']].groupby(cats.category).mean()
 ax = plt.figure().add_subplot(1,1,1)
-cats[:30].plot(kind='bar')
-ax.set_title("Reviews by category")
+cats.plot(kind='bar')
+ax.set_title("Review meanss by category")
 plt.subplots_adjust(bottom=.4)
-plt.savefig('reviews_by_category' + imsuff)
+plt.savefig('review_means_by_category' + imsuff)
 
-# Yup, the most popular yelp categories are those that are likely to
-# be pretty important in Las Vegas.
-
-# This data isn't really telling us very much.  We need to think about
-# the Las Vegas issue. It's likely that yelp activity is qualitatively
-# different there. Perhaps there's a way to test that.
-
-# We probably need to go to ACS 5-year data so we could get more
-# geographic diversity.  We feared that demographics would change too
-# much over the 5 year period. We can test that by looking at the
-# ratio of standard deviation to mean over time for out demographic data.
-
-def std_by_mean(a):
-    return a.std() / a.mean()
-
-var = (census[census.columns[3:-1]]
-       .groupby(census.GISJOIN)
-       .agg(std_by_mean)
-       .describe()
-       .stack()
-       .unstack(0)
-       )
-var['max'] = var['max'] - var['75%']
-var['75%'] = var['75%'] - var['50%']
-var['50%'] = var['50%'] - var['25%']
-var['25%'] = var['25%'] - var['min']
-ax = plt.figure().add_subplot(1,1,1)
-ax.set_title("Distribution of std/mean of fraction of demo groups" + wolv)
-var[['min', '25%', '50%', '75%', 'max']].plot(kind='bar', stacked=True)
-ax.legend()
-plt.subplots_adjust(bottom=.2)
-plt.savefig(oname + 'variability' + imsuff)
-
-# The variability is generally pretty low, although it's high for some
-# demographic county combinations. Then again, some of the demographic
-# categories are pretty small and thus subject to lots of variation.
-# The variability in larger categories (e.g. young and old) is pretty
-# small.
