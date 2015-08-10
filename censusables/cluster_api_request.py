@@ -48,11 +48,11 @@ class Cluster:
         self.geog_type = geog_type
         self.conn = sqlite3.connect('/home/russ/Documents/DistrictDataLabs/Projects/03-censusables/databases/Censusables.db')
         self.c = self.conn.cursor()
-        self.c.execute ("SELECT name FROM sqlite_master WHERE type='table' AND name='Cluster.ClusterLevel_MSA_AllYears_test';")
+        self.c.execute ("SELECT name FROM sqlite_master WHERE type='table' AND name='Cluster.ClusterLevel_MSA_AllYears';")
         self.row = self.c.fetchone()
         if self.row is None:
             self.c.execute("""
-                           CREATE TABLE 'Cluster.ClusterLevel_MSA_AllYears_test' 
+                           CREATE TABLE 'Cluster.ClusterLevel_MSA_AllYears_test         ' 
                               (row_id INTEGER PRIMARY KEY AUTOINCREMENT, year_t CHAR (25), cluster_code_t CHAR (25), patent_count_tf REAL, 
                                lq_tf_per_rank_i INT, rec_count_tl INTEGER, lq_tf_rank_i INT, emp_tl_rank_i INT, private_wage_tf_rank_i INT, 
                                id CHAR (255), emp_tl INTEGER, region_name_t CHAR (255), region_type_t CHAR (255), subcluster_b BOOLEAN, 
@@ -68,7 +68,7 @@ class Cluster:
             self.c = self.conn.cursor()
             self.c.execute ("""
                              SELECT 1 
-                             FROM 'Cluster.ClusterLevel_MSA_AllYears_test' 
+                             FROM 'Cluster.ClusterLevel_MSA_AllYears' 
                              WHERE year_t = ?
                             """, (self.year,))
             self.row = self.c.fetchone()
@@ -129,7 +129,7 @@ class Cluster:
                             self.c = self.conn.cursor()
                             self.parameter_fill = ','.join('?' * len(self.keys))
                             self.c.execute("""
-                                          INSERT INTO 'Cluster.ClusterLevel_MSA_AllYears_test' (year_t ,cluster_code_t ,patent_count_tf ,lq_tf_per_rank_i 
+                                          INSERT INTO 'Cluster.ClusterLevel_MSA_AllYears' (year_t ,cluster_code_t ,patent_count_tf ,lq_tf_per_rank_i 
                                              ,rec_count_tl ,lq_tf_rank_i ,emp_tl_rank_i ,private_wage_tf_rank_i ,id ,emp_tl ,region_name_t ,region_type_t 
                                              ,subcluster_b ,est_tl ,emp_reported_tl ,qp1_tl ,lq_tf ,est_tl_rank_i ,emp_tl_per_rank_i ,region_short_name_t 
                                              ,timestamp ,naics_b ,key_t ,traded_b ,est_tl_per_rank_i ,region_area_type_t ,type_t ,region_emp_per_tf 
@@ -166,4 +166,5 @@ def main():
  
 if __name__ == '__main__':
     main()
+
 #C-u C-c C-c
