@@ -33,6 +33,19 @@ parser.add_argument('-d', '--data-field', action='append')
 # XXX later attribute names for geoid and name are different for state
 # and county layers.  The later have a '10' suffix. WTF?
 
+def json_reader(fname):
+    with open(fname) as f:
+        for line in f:
+            yield json.loads(line)
+
+def csv_reader(fname):
+    import csv
+    with open(fname) as f:
+        reader = csv.reader(f)
+        names = [n.lower() for n in reader.next()]
+        for row in reader:
+            yield dict(zip(names, row))
+
 def main():
     args = parser.parse_args()
     if not args.shapefile.endswith('.shp'):
@@ -76,13 +89,22 @@ def main():
         features.append((shape_fields, geometry))
 
     print('joining with %s features' % len(features))
+    if args.datafile.endswith('.csv'):
+        reader = csv_reader(args.datafile)
+    elif args.datafile.endswith('.json'):
+        reader = json_reader(args.datafile)
+    else:
+        raise ValueError("Unrecognized file extension")
+
     with open(args.output, 'w') as output:
         with open(args.output+'.failed', 'w') as failed:
-            with open(args.datafile) as datafile:
-                for line in datafile:
-                    data = json.loads(line)
+            nsuccess = nfail = ndata = 0
+            for data in reader:
+                ndata += 1
+                try:
                     p = shapely.geometry.Point(
-                        *proj(data['longitude'], data['latitude']))
+                        *proj(float(data['longitude']),
+                              float(data['latitude'])))
 
                     x = int(p.x)
                     y = int(p.y)
@@ -98,16 +120,23 @@ def main():
                     pset = pset.intersection(
                         set(features_maxy.values(y-1)))
 
-                    for fid in pset:
-                        shape_fields, geometry = features[fid]
-                        if geometry.contains(p):
-                            outd = shape_fields.copy()
-                            outd.update((name, data[name])
-                                        for name in args.data_field)
-                            output.write(json.dumps(outd)+'\n')
-                            break
-                    else:
-                        failed.write(json.dumps(data)+'\n')
+                    outd = dict((name, data[name]) for name in args.data_field)
+                except Exception as v:
+                    print('Failure processing record %s: %s' % (ndata, v))
+                    nfail += 1
+                    continue
+
+                for fid in pset:
+                    shape_fields, geometry = features[fid]
+                    if geometry.contains(p):
+                        outd.update(shape_fields)
+                        output.write(json.dumps(outd)+'\n')
+                        nsuccess += 1
+                        break
+                else:
+                    nfail += 1
+                    failed.write(json.dumps(data)+'\n')
+    print('joined %s data records, failed %s' % (nsuccess, nfail))
 
 if __name__ == '__main__':
     main()
