@@ -1,0 +1,784 @@
+Index,Category,Count,New
+31,Restaurants,21892,Restaurants
+454,Shopping,8919,Shopping
+348,Food,7862,Restaurants
+239,Beauty & Spas,4738,Beauty & Spas
+215,Nightlife,4340,Nightlife
+663,Bars,3628,Bars
+548,Health & Medical,3213,Health & Medical
+63,Automotive,2965,Automotive
+147,Home Services,2853,Home Services
+614,Fashion,2566,Fashion
+230,Active Life,2470,Active Life
+626,Event Planning & Services,2467,Event Planning & Services
+749,Fast Food,2383,Fast Food
+150,Pizza,2223,Restaurants
+773,Mexican,2208,Restaurants
+365,Local Services,2144,Local Services
+558,Hotels & Travel,2131,Hotels
+332,American (Traditional),2113,Restaurants
+193,Sandwiches,1981,Restaurants
+391,Arts & Entertainment,1946,Performing Arts
+251,Coffee & Tea,1890,Restaurants
+419,Italian,1633,Restaurants
+86,Chinese,1496,Restaurants
+440,American (New),1494,Restaurants
+272,Burgers,1481,Restaurants
+247,Hair Salons,1388,Hair Salons
+533,Hotels,1307,Hotels
+59,Nail Salons,1256,Nail Salons
+23,Grocery,1233,Grocery
+329,Auto Repair,1220,Automotive
+629,Home & Garden,1173,Home Services
+591,Pets,1153,Pets
+444,Breakfast & Brunch,1116,Restaurants
+504,Doctors,1077,Health & Medical
+202,Fitness & Instruction,1068,Fitness & Instruction
+780,Specialty Food,1001,Restaurants
+702,Bakeries,941,Bakeries
+653,Women's Clothing,916,Fashion
+661,Ice Cream & Frozen Yogurt,867,Restaurants
+288,Real Estate,850,Real Estate
+696,Pubs,784,Bars
+652,Cafes,776,Restaurants
+641,Dentists,752,Health & Medical
+180,Japanese,746,Restaurants
+112,Sports Bars,713,bars
+395,Sushi Bars,671,Restaurants
+38,Delis,649,Restaurants
+291,Professional Services,640,Professional Services
+683,Pet Services,634,Pets
+413,Sporting Goods,585,Shopping
+372,Convenience Stores,578,Convenience Stores
+620,Desserts,576,Bakeries
+426,Department Stores,573,Shopping
+403,Cosmetics & Beauty Supply,563,Cosmetics & Beauty Supply
+2,Drugstores,561,Drugstores
+76,Gyms,560,Gyms
+613,Steakhouses,554,Restaurants
+168,Seafood,554,Restaurants
+779,Financial Services,544,Financial Services
+68,Lounges,536,bars
+643,Day Spas,519,Beauty & Spas
+48,Chicken Wings,516,Carry Out
+228,Accessories,510,Accessories
+432,Education,506,Education
+182,"Books, Mags, Music & Video",505,"Books, Mags, Music & Video"
+707,General Dentistry,496,Health & Medical
+207,Men's Clothing,494,Fashion
+564,Flowers & Gifts,492,Flowers & Gifts
+480,Arts & Crafts,492,Arts & Crafts
+425,Mediterranean,490,Restaurants
+279,Massage,489,Beauty & Spas
+528,Tires,487,Automotive
+303,Barbeque,477,Restaurants
+467,Skin Care,475,Beauty & Spas
+463,Thai,472,Restaurants
+573,Apartments,469,Real Estate
+549,"Beer, Wine & Spirits",465,"Beer, Wine & Spirits"
+628,Jewelry,454,Fashion
+478,Asian Fusion,446,Restaurants
+25,Hair Removal,439,Health & Medical
+446,Oil Change Stations,433,Automotive
+398,French,433,Restaurants
+619,Public Services & Government,426,Public Services & Government
+3,Dry Cleaning & Laundry,425,Dry Cleaning & Laundry
+5,Buffets,420,Restaurants
+452,Gas & Service Stations,412,Automotive
+668,Veterinarians,401,Pets
+293,Performing Arts,401,Performing Arts
+346,Furniture Stores,397,Furniture Stores
+621,Venues & Event Spaces,397,Venues & Event Spaces
+723,Barbers,379,Hair Salons
+300,Indian,376,Restaurants
+493,Pet Groomers,373,pets
+78,Greek,363,Restaurants
+638,Banks & Credit Unions,355,Financial Services
+298,Trainers,353,Gyms
+747,Parks,352,Parks
+163,Music Venues,343,Performing Arts
+115,Auto Parts & Supplies,334,Automotive
+605,Shoe Stores,331,Fashion
+439,Dance Clubs,330,Nightlife
+123,Juice Bars & Smoothies,325,Restaurants
+252,Optometrists,324,Health & Medical
+248,Car Wash,323,Automotive
+689,Pet Stores,319,pets
+87,Home Decor,304,Home Services
+111,Diners,302,Restaurants
+322,Printing Services,299,Printing Services
+578,Mobile Phones,287,Mobile Phones
+140,Vietnamese,283,Restaurants
+750,Electronics,271,Shopping
+307,Transportation,271,Transportation
+671,Cosmetic Dentists,265,Health & Medical
+22,Pet Boarding/Pet Sitting,255,Pets
+433,Tex-Mex,250,Restaurants
+199,Chiropractors,249,Health & Medical
+118,Vegetarian,244,Restaurants
+615,Thrift Stores,243,Shopping
+113,Donuts,243,Carry Out
+148,Eyewear & Opticians,241,Health & Medical
+532,Wine Bars,236,Bars
+349,Heating & Air Conditioning/HVAC,234,Home Services
+767,Florists,233,Flowers & Gifts
+324,Bookstores,233,"Books, Mags, Music & Video"
+774,Car Dealers,230,Automotive
+442,Caterers,229,Caterers
+603,Salad,228,Restaurants
+429,Medical Centers,227,Health & Medical
+515,Casinos,225,Casinos
+184,Hot Dogs,223,Carry Out
+508,"Used, Vintage & Consignment",219,Shopping
+535,Shipping Centers,216,Shipping Centers
+724,Golf,215,Shopping
+417,Specialty Schools,212,Education
+80,Hardware Stores,211,Shopping
+40,Tanning,210,Beauty & Spas
+318,Party & Event Planning,210,Party & Event Planning
+95,Middle Eastern,209,Restaurants
+567,Hair Stylists,207,Hair Salons
+92,Yoga,206,Yoga
+81,Art Galleries,204,Arts & Crafts
+556,Local Flavor,204,Local Services
+219,Dive Bars,203,bars
+260,Contractors,202,Home Services
+75,Hobby Shops,197,Shopping
+129,Tobacco Shops,195,Tobacco Shops
+662,Eyelash Service,190,Hair Salons
+361,Ethnic Food,190,Restaurants
+325,Plumbing,189,Home Services
+740,Sports Wear,188,Shopping
+684,Korean,186,Restaurants
+537,Bagels,185,Restaurants
+10,Canadian (New),183,Restaurants
+264,Body Shops,181,Automotive
+90,Bikes,180,Shopping
+483,Tours,179,Active Life
+477,Cinema,178,Cinema
+88,Food Trucks,178,Carry Out
+500,Sewing & Alterations,178,Dry Cleaning & Laundry
+566,Car Rental,176,Automotive
+388,IT Services & Computer Repair,174,Local Services
+503,Religious Organizations,167,Religious Organizations
+352,Photographers,165,Photographers
+170,Discount Store,164,Shopping
+53,Antiques,162,Shopping
+487,Makeup Artists,161,Beauty & Spas
+669,Health Markets,160,Grocery
+186,Festivals,159,Arts & Crafts
+271,Museums,157,Museums
+306,Nurseries & Gardening,156,Nurseries & Gardening
+390,Gluten-Free,156,Restaurants
+137,Home Cleaning,155,Home Services
+639,Auto Glass Services,155,Automotive
+56,Shopping Centers,154,Shopping
+402,Massage Therapy,152,Beauty & Spas
+644,Family Practice,152,Health & Medical
+673,Tattoo,151,Tattoo
+604,Toy Stores,151,Shopping
+301,Latin American,151,Restaurants
+13,Appliances,150,Shopping
+677,Carpet Cleaning,145,Home Services
+169,British,143,Restaurants
+697,Landscaping,140,Home Services
+719,Urgent Care,140,Health & Medical
+380,Auto Detailing,139,Automotive
+700,Gastropubs,139,Restaurants
+682,Real Estate Services,138,Real Estate
+727,Chocolatiers & Shops,136,Bakeries
+499,Southern,134,Restaurants
+377,Medical Spas,132,Beauty & Spas
+710,Breweries,132,Breweries
+585,Notaries,132,Local Services
+408,Movers,131,Home Services
+472,Farmers Market,130,Grocery
+627,Obstetricians & Gynecologists,129,Health & Medical
+428,Self Storage,128,Self Storage
+218,Pet Training,128,Pets
+217,Cocktail Bars,126,Bars
+695,Vegan,126,Restaurants
+335,Vape Shops,126,Shopping
+592,Churches,123,Religious Organizations
+455,Hawaiian,122,Restaurants
+196,Children's Clothing,122,Shopping
+128,German,120,Restaurants
+658,Kitchen & Bath,119,Home Services
+510,Physical Therapy,119,Health & Medical
+688,Pest Control,117,Home Services
+405,Hair Extensions,116,Hair Salons
+296,Office Equipment,116,Shopping
+209,Music & DVDs,114,"Books, Mags, Music & Video"
+55,Orthodontists,113,Health & Medical
+497,Internet Service Providers,112,Local Services
+270,Appliances & Repair,111,Local Services
+732,Real Estate Agents,110,Real Estate
+521,Cards & Stationery,109,Shopping
+221,Mortgage Brokers,108,Real Estate
+708,Swimming Pools,107,Active Life
+739,Insurance,107,Financial Services
+514,Post Offices,107,Local Services
+29,Community Service/Non-Profit,107,Local Services
+411,Food Delivery Services,106,Carry Out
+569,Wedding Planning,106,Home Services
+777,Meat Shops,104,Carry Out
+676,Adult Entertainment,104,Arts & Crafts
+530,Property Management,104,Real Estate
+523,Candy Stores,103,Carry Out
+249,Lawyers,101,Local Services
+540,Libraries,101,Local Services
+527,Karaoke,100,Bars
+464,Fish & Chips,99,Restaurants
+364,Computers,99,Shopping
+414,Amusement Parks,98,Active Life
+336,Martial Arts,98,Active Life
+376,Colleges & Universities,98,Education
+235,Hospitals,98,Health & Medical
+736,Videos & Video Game Rental,97,"Books, Mags, Music & Video"
+134,Mass Media,96,Local Services
+543,Bridal,96,Local Services
+495,Preschools,96,Education
+99,Building Supplies,95,Shopping
+600,Baby Gear & Furniture,95,Shopping
+37,Outdoor Gear,95,Shopping
+502,Pediatricians,94,Health & Medical
+7,Child Care & Day Care,93,Local Services
+74,Men's Hair Salons,93,Hair Salons
+257,Tapas Bars,93,Restaurants
+494,Gay Bars,93,Bars
+106,Landmarks & Historical Buildings,93,Landmarks & Historical Buildings
+486,Pool Cleaners,92,Home Services
+602,Musical Instruments & Teachers,92,Local Services
+185,Gift Shops,92,Shopping
+609,Dermatologists,91,Health & Medical
+479,Mattresses,91,Shopping
+565,Soup,90,Restaurants
+206,Pediatric Dentists,89,Health & Medical
+685,Pakistani,88,Restaurants
+93,Ophthalmologists,87,Restaurants
+586,Street Vendors,86,Carry Out
+587,Tapas/Small Plates,86,Restaurants
+743,Art Supplies,85,Arts & Crafts
+320,Waxing,84,Beauty & Spas
+274,Lingerie,84,Shopping
+714,Graphic Design,83,Arts & Crafts
+70,Shoe Repair,79,Local Services
+438,Caribbean,78,Restaurants
+326,Taxis,78,Transportation
+387,Soul Food,78,Restaurants
+227,Weight Loss Centers,78,Health & Medical
+30,Bowling,77,Active Life
+409,Irish,77,Restaurants
+427,Motorcycle Dealers,77,Automotive
+443,Airport Shuttles,76,Transportation
+660,Wheel & Rim Repair,76,Automotive
+34,Hiking,76,Active Life
+635,Watches,75,Shopping
+742,Flooring,75,Home Services
+397,Tea Rooms,74,Restaurants
+54,Food Stands,74,Carry Out
+28,Stadiums & Arenas,73,Stadiums & Arenas
+94,Hookah Bars,73,Restaurants
+51,Diagnostic Services,73,Local Services
+373,Comfort Food,72,Restaurants
+73,Cajun/Creole,72,Restaurants
+220,Playgrounds,72,Parks
+334,Outlet Stores,71,Shopping
+197,Dance Studios,70,Dance Studios
+154,Keys & Locksmiths,70,Local Services
+85,Limos,70,Transportation
+65,Interior Design,70,Home Services
+287,Electricians,69,Home Services
+781,Spanish,69,Restaurants
+62,Elementary Schools,69,Education
+589,Wholesale Stores,69,Shopping
+146,Smog Check Stations,68,Automotive
+498,Guns & Ammo,68,Shopping
+35,Fabric Stores,67,Shopping
+241,Acupuncture,67,Health & Medical
+138,Pilates,67,Active Life
+674,Electronics Repair,67,Local Services
+768,Oral Surgeons,66,Health & Medical
+195,Shaved Ice,66,Carry Out
+89,Resorts,65,Hotels
+542,Towing,65,Automotive
+450,Comic Books,64,"Books, Mags, Music & Video"
+738,Windshield Installation & Repair,64,Automotive
+489,Turkish,64,Restaurants
+490,Laser Hair Removal,64,Health & Medical
+650,Bike Rentals,63,Transportation
+692,Brasseries,63,Fashion
+406,Session Photography,63,Local Services
+229,Signmaking,62,Local Services
+771,Internal Medicine,61,Health & Medical
+284,Pool Halls,61,Nightlife
+341,Hot Tub & Pool,61,Beauty & Spas
+547,Filipino,61,Restaurants
+601,Party Supplies,60,Shopping
+158,Blow Dry/Out Services,58,Home Services
+374,Portuguese,58,Restaurants
+382,Arcades,57,Active Life
+266,Dog Walkers,57,pets
+17,Comedy Clubs,57,Performing Arts
+512,Mobile Phone Repair,57,Local Services
+9,Creperies,57,Restaurants
+39,Bed & Breakfast,56,Hotels
+633,Fruits & Veggies,56,Grocery
+107,Costumes,56,Shopping
+119,Piercing,55,Tattoo
+304,Recreation Centers,55,Active Life
+461,Handyman,55,Home Services
+756,Sports Clubs,54,Nightlife
+253,Cheesesteaks,53,Carry Out
+258,Public Transportation,53,Transportation
+26,Dog Parks,53,Pets
+769,Windows Installation,52,Home Services
+116,Seafood Markets,52,Carry Out
+167,Web Design,51,Local Services
+379,Cheese Shops,51,Bakeries
+670,Event Photography,51,Local Services
+103,Nutritionists,51,Local Services
+67,Travel Services,50,Transportation
+552,Accountants,50,Financial Services
+273,Orthopedists,50,Health & Medical
+715,Modern European,50,Restaurants
+153,Marketing,50,Financial Services
+612,Leather Goods,49,Shopping
+201,Dim Sum,49,Restaurants
+313,Boot Camps,48,Active Life
+337,Television Service Providers,48,Local Services
+311,Tax Services,47,Financial Services
+517,Pawn Shops,47,Shopping
+574,Peruvian,46,Restaurants
+1,Truck Rental,46,Transportation
+339,Knitting Supplies,46,Shopping
+691,Security Systems,45,Home Services
+580,Motorcycle Repair,45,Automotive
+66,Cosmetic Surgeons,45,Health & Medical
+328,Garage Door Services,45,Home Services
+125,Painters,45,Home Services
+701,Car Stereo Installation,44,Automotive
+729,Naturopathic/Holistic,43,Health & Medical
+367,Reflexology,43,Health & Medical
+33,Formal Wear,43,Fashion
+72,Animal Shelters,43,Pets
+716,Photography Stores & Services,41,Local Services
+474,Middle Schools & High Schools,41,Education
+445,Radio Stations,41,Performing Arts
+142,Personal Injury Law,40,Local Services
+449,Do-It-Yourself Food,40,Carry Out
+485,Gun/Rifle Ranges,40,Active Life
+157,Office Cleaning,40,Home Services
+636,Carpeting,39,Home Services
+746,Airlines,39,Transportation
+69,Persian/Iranian,39,Restaurants
+294,Cupcakes,39,Bakeries
+525,Vinyl Records,38,"Books, Mags, Music & Video"
+657,Lighting Fixtures & Equipment,38,Shopping
+315,Auto Customization,38,Automotive
+354,Tree Services,37,Home Services
+130,Taiwanese,36,Restaurants
+646,Bubble Tea,36,Restaurants
+733,Horseback Riding,36,Active Life
+764,Boxing,36,Active Life
+617,Gelato,35,Restaurants
+416,Spray Tanning,35,Local Services
+0,Roofing,35,Home Services
+32,DJs,35,Performing Arts
+210,Diagnostic Imaging,35,Local Services
+362,Jazz & Blues,35,Performing Arts
+295,Sports Medicine,34,Health & Medical
+265,Cuban,34,Restaurants
+263,Amateur Sports Teams,33,Active Life
+200,Shades & Blinds,33,Home Services
+240,Butcher,33,Grocery
+314,Adult,33,Nightlife
+357,Print Media,33,Local Services
+640,Laboratory Testing,33,Health & Medical
+84,Watch Repair,33,Local Services
+519,Hostels,33,Hotels
+705,Yelp Events,33,Active Life
+524,Kebab,32,Restaurants
+98,Brazilian,31,Restaurants
+321,Art Schools,31,Education
+448,Airports,31,Transportation
+6,Boating,31,Active Life
+656,Wineries,31,Breweries
+127,Couriers & Delivery Services,31,Local Services
+237,Window Washing,31,Home Services
+757,Departments of Motor Vehicles,31,Automotive
+473,African,30,Restaurants
+191,Podiatrists,30,Health & Medical
+41,Halal,30,Restaurants
+143,Scottish,30,Restaurants
+575,Barre Classes,30,Gyms
+570,Counseling & Mental Health,29,Health & Medical
+205,Ear Nose & Throat,29,Health & Medical
+553,Financial Advising,29,Financial Services
+713,Funeral Services & Cemeteries,28,Local Services
+596,Skating Rinks,28,Active Life
+734,Parking,28,Transportation
+699,Framing,28,Local Services
+369,Criminal Defense Law,27,Local Services
+760,Gardeners,27,Home Services
+400,Newspapers & Magazines,27,"Books, Mags, Music & Video"
+718,Party Equipment Rentals,27,Local Services
+316,Cosmetology Schools,27,Education
+8,Endodontists,26,Health & Medical
+531,Mongolian,26,Restaurants
+356,Life Coach,26,Local Services
+462,Screen Printing/T-Shirt Printing,26,Local Services
+19,Szechuan,26,Restaurants
+538,Tennis,25,Active Life
+267,Dance Schools,25,Education
+506,Cooking Schools,25,Education
+666,Periodontists,25,Health & Medical
+536,Ethiopian,25,Restaurants
+208,Bistros,25,Restaurants
+434,Internet Cafes,25,Restaurants
+308,Home Theatre Installation,24,Home Services
+162,Furniture Reupholstery,24,Home Services
+539,Social Clubs,24,Active Life
+49,Laser Eye Surgery/Lasik,24,Health & Medical
+120,Kosher,24,Restaurants
+559,Lebanese,24,Restaurants
+333,Home Inspectors,23,Home Services
+392,Home Window Tinting,23,Home Services
+172,Professional Sports Teams,23,Active Life
+104,Divorce & Family Law,23,Local Services
+297,Swimwear,22,Shopping
+165,Beer Garden,22,Bars
+698,Mini Golf,22,Active Life
+190,Permanent Makeup,22,Tattoo
+675,Video/Film Production,21,Local Services
+277,Solar Installation,21,Home Services
+611,Driving Schools,21,Education
+255,Kids Activities,21,Active Life
+753,Bike Repair/Maintenance,20,Local Services
+136,Art Classes,20,Education
+624,Polish,20,Restaurants
+244,Damage Restoration,20,Home Services
+563,Luggage,20,Shopping
+27,Adult Education,19,Education
+83,Pretzels,19,Carry Out
+404,Jewelry Repair,19,Local Services
+79,Zoos,18,Zoos
+358,Moroccan,18,Restaurants
+412,Videographers,18,Local Services
+726,Ramen,18,Restaurants
+775,Ticket Sales,18,Local Services
+42,Cantonese,18,Restaurants
+261,Midwives,18,Health & Medical
+511,Leisure Centers,18,Active Life
+588,Fondue,18,Restaurants
+43,Herbs & Spices,17,Grocery
+281,Uniforms,17,Fashion
+203,Summer Camps,17,Active Life
+554,Radiologists,17,Health & Medical
+721,Psychics & Astrologers,17,Local Services
+135,Basque,17,Restaurants
+451,Junk Removal & Hauling,17,Home Services
+560,Swimming Lessons/Schools,16,Education
+278,Employment Agencies,16,Local Services
+114,Russian,16,Restaurants
+731,Cannabis Clinics,16,Health & Medical
+60,Photo Booth Rentals,16,Local Services
+161,Food Court,16,Carry Out
+222,Television Stations,16,Local Services
+204,RV Dealers,16,Automotive
+371,Allergists,16,Health & Medical
+594,Belgian,16,Restaurants
+648,Carpet Installation,16,Home Services
+415,Door Sales/Installation,16,Home Services
+254,Lakes,15,Parks
+526,Botanical Gardens,15,Active Life
+100,Landscape Architects,15,Home Services
+238,Golf Equipment,15,Shopping
+496,Home Organization,15,Home Services
+353,Maternity Wear,15,Fashion
+778,Traditional Chinese Medicine,15,Health & Medical
+491,Live/Raw Food,15,Grocery
+761,Gymnastics,15,Active Life
+424,Police Departments,14,Local Services
+686,Tattoo Removal,14,Tattoo
+343,Soccer,14,Active Life
+188,Salvadoran,14,Restaurants
+550,Himalayan/Nepalese,14,Restaurants
+665,Cabinetry,14,Home Services
+20,Climbing,14,Active Life
+342,Delicatessen,14,Carry Out
+557,Home Health Care,14,Health & Medical
+82,Battery Stores,14,Shopping
+36,Bankruptcy Law,14,Local Services
+280,General Litigation,14,Local Services
+720,Poutineries,13,Restaurants
+340,Aquariums,13,Zoos
+516,Champagne Bars,13,Bars
+599,Reiki,13,Gyms
+368,Advertising,13,Local Services
+312,Afghan,13,Restaurants
+57,Mountain Biking,13,Active Life
+16,Pool & Hot Tub Service,13,Local Services
+290,Diving,13,Active Life
+730,Rehabilitation Center,13,Health & Medical
+593,Wigs,12,Shopping
+572,Coffeeshops,12,Restaurants
+722,DUI Law,12,Local Services
+11,Business Law,12,Local Services
+285,Recycling Center,12,Local Services
+655,Plus Size Fashion,11,Fashion
+407,Educational Services,11,Education
+544,Vacation Rentals,11,Hotels
+571,Masonry/Concrete,11,Home Services
+482,Glass & Mirrors,11,Home Services
+484,Fences & Gates,11,Home Services
+418,Fertility,11,Health & Medical
+286,Rafting/Kayaking,11,Active Life
+437,Irish Pub,11,Bars
+447,Paintball,11,Active Life
+351,Embroidery & Crochet,11,Arts & Crafts
+649,Go Karts,11,Active Life
+754,Medical Supplies,11,Health & Medical
+256,Estate Planning Law,11,Local Services
+518,Party Bus Rentals,11,Transportation
+755,Personal Shopping,10,Shopping
+381,RV Rental,10,Transportation
+709,Cardiologists,10,Health & Medical
+441,Investing,10,Financial Services
+370,Neurologist,10,Health & Medical
+310,Retirement Homes,10,Local Services
+323,Skate Parks,10,Active Life
+91,Organic Stores,10,Grocery
+522,Irrigation,10,Home Services
+752,Colombian,10,Restaurants
+711,Malaysian,10,Restaurants
+632,Pharmacy,10,Health & Medical
+562,Cycling Classes,9,Education
+214,Patisserie/Cake Shop,9,Bakeries
+77,Scandinavian,9,Restaurants
+488,Commercial Real Estate,9,Real Estate
+223,Pressure Washers,9,Home Services
+110,Vocational & Technical School,9,Education
+226,Hats,9,Shopping
+231,Disc Golf,9,Active Life
+401,University Housing,9,Local Services
+179,Boat Charters,9,Active Life
+144,Video Game Stores,9,"Books, Mags, Music & Video"
+647,Magicians,9,Performing Arts
+458,Utilities,9,Local Services
+555,Career Counseling,9,Education
+160,Falafel,8,Restaurants
+363,Train Stations,8,Transportation
+763,Cambodian,8,Restaurants
+453,Indonesian,8,Restaurants
+460,Argentine,8,Restaurants
+690,Check Cashing/Pay-day Loans,8,Financial Services
+693,Cultural Center,8,Local Services
+166,RV Parks,8,Parks
+174,Screen Printing,8,Local Services
+47,Real Estate Law,8,Real Estate
+164,Archery,8,Active Life
+590,Arabian,8,Restaurants
+173,Challenge Courses,7,Education
+155,Campgrounds,7,Active Life
+152,Gastroenterologist,7,Health & Medical
+630,Endocrinologists,7,Health & Medical
+637,International,7,Restaurants
+139,Hypnosis/Hypnotherapy,7,Health & Medical
+178,Baden,7,Restaurants
+607,Data Recovery,7,Local Services
+189,Drywall Installation & Repair,7,Home Services
+681,Race Tracks,7,Active Life
+121,Flea Markets,7,Shopping
+242,Airport Lounges,7,Bars
+712,Special Education,7,Education
+233,Boat Repair,7,Local Services
+389,Tanning Beds,7,Local Services
+15,Speech Therapists,7,Education
+338,Trampoline Parks,7,Parks
+751,Lactation Services,7,Health & Medical
+581,Orthotics,7,Health & Medical
+292,Scuba Diving,7,Active Life
+744,Opera & Ballet,7,Performing Arts
+245,Guest Houses,7,Hotels
+24,Pet Adoption,7,Pets
+717,Private Tutors,7,Education
+704,Hot Air Balloons,6,Active Life
+616,Recording & Rehearsal Studios,6,Performing Arts
+384,Language Schools,6,Education
+679,Water Delivery,6,Home Services
+664,Payroll Services,6,Financial Services
+366,Tutoring Centers,6,Education
+420,Personal Assistants,6,Local Services
+14,Occupational Therapy,6,Health & Medical
+141,Massage Schools,6,Education
+436,Personal Chefs,6,Local Services
+501,Registration Services,6,Local Services
+735,Flight Instruction,6,Education
+327,Bartenders,6,Bars
+175,Beer Gardens,6,Bars
+606,Brewing Supplies,6,Shopping
+513,Hot Pot,5,Restaurants
+393,Musicians,5,Performing Arts
+659,Hindu Temples,5,Religious Organizations
+359,Beaches,5,Active Life
+618,Beverage Store,5,"Beer, Wine & Spirits"
+541,Buddhist Temples,5,Religious Organizations
+108,Souvenir Shops,5,Shopping
+156,Country Dance Halls,5,Active Life
+399,Face Painting,5,Local Services
+595,Propane,5,Home Services
+177,Bail Bondsmen,5,Local Services
+765,Musical Instrument Services,5,Local Services
+216,Auto Loan Providers,5,Financial Services
+745,Surgeons,5,Health & Medical
+378,Bespoke Clothing,5,Fashion
+276,Private Investigation,5,Local Services
+269,CSA,5,Local Services
+268,Auction Houses,5,Local Services
+246,Distilleries,5,Breweries
+431,Motorcycle Rental,5,Transportation
+622,Oncologist,5,Health & Medical
+651,Urologists,5,Health & Medical
+102,Shanghainese,5,Restaurants
+355,Shared Office Spaces,4,Local Services
+234,Psychiatrists,4,Health & Medical
+52,Gold Buyers,4,Local Services
+375,Refinishing Services,4,Local Services
+687,Trophy Shops,4,Shopping
+546,Dominican,4,Restaurants
+394,Motorcycle Gear,4,Shopping
+678,Boat Dealers,4,Shopping
+577,Talent Agencies,4,Local Services
+232,Shutters,4,Home Services
+423,Synagogues,4,Religious Organizations
+145,Officiants,4,Local Services
+305,Coffee & Tea Supplies,4,Shopping
+330,Laser Tag,4,Active Life
+509,Piano Services,4,Local Services
+45,Telecommunications,4,Local Services
+561,Tai Chi,4,Active Life
+471,Burmese,4,Restaurants
+706,Aquarium Services,4,Home Services
+344,Piano Bars,4,Bars
+385,Horse Boarding,4,Local Services
+576,Egyptian,4,Restaurants
+642,Christmas Markets,4,Shopping
+151,Venezuelan,4,Restaurants
+645,Rock Climbing,4,Active Life
+551,RV Repair,4,Automotive
+766,Employment Law,4,Local Services
+703,Cooking Classes,3,Education
+21,Audiologist,3,Health & Medical
+748,CPR Classes,3,Education
+680,Courthouses,3,Local Services
+96,Paddleboarding,3,Education
+46,Curry Sausage,3,Grocery
+50,Car Share Services,3,Transportation
+584,Chimney Sweeps,3,Home Services
+117,Firewood,3,Shopping
+623,Meditation Centers,3,Health & Medical
+176,Doulas,3,Health & Medical
+608,Ethnic Grocery,3,Grocery
+598,Pasta Shops,3,Grocery
+582,Rugs,3,Shopping
+213,Powder Coating,3,Local Services
+225,Insulation Installation,3,Home Services
+250,Skydiving,3,Active Life
+259,Anesthesiologists,3,Health & Medical
+262,Hearing Aid Providers,3,Health & Medical
+507,Osteopathic Physicians,3,Health & Medical
+275,Buses,3,Transportation
+492,Bangladeshi,3,Restaurants
+309,Fireworks,3,Shopping
+475,Beer Bar,3,Bars
+299,Food Tours,3,Active Life
+171,Clowns,3,Performing Arts
+579,Rheumatologists,3,Health & Medical
+421,Security Services,3,Local Services
+634,Matchmakers,3,Local Services
+159,Test Preparation,3,Education
+133,Laotian,3,Restaurants
+149,Australian,3,Restaurants
+97,Nanny Services,2,Local Services
+759,Serbo Croatian,2,Restaurants
+654,Prosthetics,2,Health & Medical
+236,General Festivals,2,Active Life
+728,Rolfing,2,Health & Medical
+529,Wine Tours,2,Active Life
+672,Shredding Services,2,Home Services
+105,Hungarian,2,Restaurants
+505,Flowers,2,Flowers & Gifts
+360,Surfing,2,Active Life
+396,Septic Services,2,Home Services
+126,Currency Exchange,2,Financial Services
+468,Uzbek,2,Restaurants
+476,Singaporean,2,Restaurants
+383,Fishing,2,Active Life
+4,Trains,2,Transportation
+224,Batting Cages,2,Active Life
+319,First Aid Classes,2,Education
+302,Fireplace Services,2,Home Services
+469,Food Banks,2,Local Services
+422,Metal Fabricators,2,Local Services
+183,Lice Services,2,Local Services
+435,Saunas,2,Beauty & Spas
+350,Trinidadian,2,Restaurants
+770,Mailbox Centers,2,Local Services
+386,Health Retreats,2,Active Life
+12,Teppanyaki,2,Restaurants
+101,Legal Services,2,Local Services
+181,Pub Food,2,Bars
+18,Architects,2,Local Services
+610,Immigration Law,2,Local Services
+631,Vacation Rental Agents,2,Hotels
+694,Horse Racing,2,Active Life
+61,Ski Resorts,2,Active Life
+430,Austrian,2,Restaurants
+465,Pulmonologist,1,Health & Medical
+459,Iberian,1,Restaurants
+466,High Fidelity Audio Equipment,1,Automotive
+331,Fire Protection Services,1,Home Services
+457,Valet Services,1,Transportation
+758,Street Art,1,Performing Arts
+410,College Counseling,1,Education
+776,Medical Transportation,1,Transportation
+347,Ukrainian,1,Restaurants
+456,Izakaya,1,Restaurants
+317,Sugaring,1,Beauty & Spas
+762,Home Staging,1,Home Services
+345,Religious Schools,1,Education
+772,Cafeteria,1,Restaurants
+243,Wok,1,Restaurants
+470,Public Plazas,1,Local Services
+481,Gutter Services,1,Home Services
+122,Pole Dancing Classes,1,Education
+124,Pita,1,Restaurants
+667,Pop-up Shops,1,Shopping
+109,Donairs,1,Restaurants
+131,Bus Tours,1,Transportation
+132,Haitian,1,Restaurants
+625,Mosques,1,Religious Organizations
+187,Surf Shop,1,Shopping
+597,Day Camps,1,Active Life
+192,Oriental,1,Restaurants
+194,Swiss Food,1,Restaurants
+198,Eastern German,1,Restaurants
+583,Bartending Schools,1,Education
+71,Walking Tours,1,Active Life
+64,Eastern European,1,Restaurants
+211,Basketball Courts,1,Active Life
+568,Used Bookstore,1,"Books, Mags, Music & Video"
+212,Bike Sharing,1,Transportation
+58,Firearm Training,1,Education
+545,Walk-in Clinics,1,Health & Medical
+725,Czech,1,Restaurants
+534,Golf Equipment Shops,1,Shopping
+520,Castles,1,Active Life
+737,Hang Gliding,1,Active Life
+44,Customized Merchandise,1,Shopping
+741,Psychologists,1,Health & Medical
+282,Furniture Repair,1,Home Services
+283,Bavarian,1,Restaurants
+289,Hospice,1,Health & Medical
+782,Cabaret,1,Performing Arts
