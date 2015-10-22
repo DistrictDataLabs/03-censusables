@@ -1,0 +1,89 @@
+{
+  "axes": [],
+  "data": [
+    {
+      "format": {
+        "feature": "zip_codes_for_the_usa",
+        "type": "topojson"
+      },
+      "name": "zip_codes",
+      "transform": [
+        {
+          "projection": "albersUsa",
+          "scale": 800,
+          "translate": [
+            480,
+            250
+          ],
+          "type": "geopath",
+          "value": "data"
+        }
+      ],
+      "url": "zips_us_topo.json"
+    },
+    {
+      "format": {
+        "feature": "us_states.geo",
+        "type": "topojson"
+      },
+      "name": "states",
+      "transform": [
+        {
+          "projection": "albersUsa",
+          "scale": 800,
+          "translate": [
+            480,
+            250
+          ],
+          "type": "geopath",
+          "value": "data"
+        }
+      ],
+      "url": "us_states.topo.json"
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "zip_codes"
+      },
+      "properties": {
+        "enter": {
+          "path": {
+            "field": "path"
+          },
+          "stroke": {
+            "value": "#CCCCFF"
+          }
+        },
+        "update": {
+          "fill": {
+            "value": "#FFFFFF"
+          }
+        }
+      },
+      "type": "path"
+    },
+    {
+      "from": {
+        "data": "states"
+      },
+      "properties": {
+        "enter": {
+          "path": {
+            "field": "path"
+          },
+          "stroke": {
+            "value": "#FF0000"
+          }
+        }
+      },
+      "type": "path"
+    }
+  ],
+  "padding": "auto",
+  "scales": [],
+  "width": 960
+}

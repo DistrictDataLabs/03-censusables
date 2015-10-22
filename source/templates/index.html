@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Censusables</title>
+  <link rel="stylesheet" href="../static/jquery/jquery-ui.min.css">
+  <link rel="stylesheet" href="../static/jquery/jquery-ui.structure.css">
+  <style>
+        .ui-slider-range{
+        background-image:none;
+        background-color: #9966FF;
+	}
+
+        .ui-slider .ui-slider-handle {
+         background: #330033;
+        }
+	
+	.sliderholder{
+        padding-bottom : 20px;
+        }
+
+        .slider-padding{
+	padding-top : 5px;
+	padding-bottom : 5px;
+	}
+
+	label{
+	display: block;
+	width: 300px; }
+
+        #wrapper {
+        margin-right: 400px;
+	font-size: small;
+        }
+        
+        #slidercontainer {
+          float: left;
+          width: 300px;
+          margin-left: 20px;
+          /*background-color: #CCF;*/
+        }
+        #contentcontainer {
+          float: right;
+          width: 100%;
+          margin-right:-400px;
+          /*background-color: #FFA;*/
+        }
+	
+	#state-selectmenu {
+	width : 220px;
+	}
+
+	.selectmenu-overflow {
+	height : 120px;
+	}
+
+	#spacer{
+	 padding-top: 10px
+	}
+
+	#zipcode_table{
+	width: 200px;
+	white-space: nowrap;
+	}
+
+	
+	
+	
+        #cleared {
+          clear: both;
+        }
+    </style>
+
+  <script src="../static/jquery/external/jquery/jquery.js"></script>
+  <script src="../static/jquery/jquery-ui.js"></script>
+
+ 
+    <script src="../static/topojson.js"></script>
+    <script src="../static/d3.v3.min.js"></script>
+    <script src="../static/d3.geo.projection.v0.min.js"></script>
+    <script src="../static/d3.layout.cloud.js"></script>
+    <script src="../static/vega.v1.3.3.js"></script>
+
+ 
+<body>
+    
+<div id="wrapper">
+      <!-- Div to hold header and chart -->
+      <div id="contentcontainer">
+          <!-- Header -->
+          <h3 align='center'>Zip Code Map</h3>
+          <!-- Chart Div -->
+          <div class="charts text-center">
+              <!-- Only one chart -->
+              <div class="row">
+		<div id="vis">
+	        </div>
+	      </div>
+           </div>
+      </div>  
+
+      <!-- Div to hold sliders -->
+      <div id = "slidercontainer">
+	<h4>Choose your preferences:</h4>
+	      <label for="income">Average Income:</label>
+              <input type="text" id="income" name="IncomeValue" style="border:0; color:#660066; font-size:14px; font-weight:bold;" />
+              <div class="slider-padding"><div id="slider_income"></div></div>
+
+              <input type="hidden" name="income_value" id="income_val" value=50 />
+              <p hidden>Your value is: <span id="income_result"></span></p>
+          
+              <label for="housing">Housing Cost: </label>
+              <input type="text" id="housing" name="HousingValue" style="border:0; color:#660066; font-size:14px; font-weight:bold;" />
+              <div class="slider-padding"><div id="slider_housing"></div></div>
+
+              <input type="hidden" name="housing_value" id="housing_val" value=50 />
+              <p hidden >Your value is: <span id="housing_result"></span></p>
+           
+
+              <label for="diversity">Diversity:</label>
+              <input type="text" id="diversity" name="DiversityValue" style="border:0; color:#660066; font-size:14px; font-weight:bold;" />
+              <div class="slider-padding"><div id="slider_diversity"></div></div>
+
+              <input type="hidden" name="diversity_value" id="diversity_val" value=50 />
+              <p hidden>Your value is: <span id="diversity_result"></span></p>
+
+
+              <label for="urbanization">Population Density: </label>
+              <input type="text" id="urbanization" name="UrbanizationValue" style="border:0; color:#660066; font-size:14px; font-weight:bold;" />
+              <div class="slider-padding"><div id="slider_urbanization"></div></div>
+
+              <input type="hidden" name="urbanization_value" id="urbanization_val" value=50 />
+              <p hidden>Your value is: <span id="urbanization_result"></span></p>
+
+              <!-- Drop Down Menu -->
+                <label for="state-selectmenu">Select State:</label>
+		 <select id="state-selectmenu">
+	           <option value="ZZ" selected="selected">Select State</option>
+		   <option value="AL">Alabama</option>
+		   <option value="AK">Alaska</option>
+		   <option value="AZ">Arizona</option>
+		   <option value="AR">Arkansas</option>
+		   <option value="CA">California</option>
+		   <option value="CO">Colorado</option>
+		   <option value="CT">Connecticut</option>
+		   <option value="DE">Delaware</option>
+		   <option value="DC">District of Columbia</option>
+		   <option value="FL">Florida</option>
+		   <option value="GA">Georgia</option>
+		   <option value="HI">Hawaii</option>
+		   <option value="ID">Idaho</option>
+		   <option value="IL">Illinois</option>
+		   <option value="IN">Indiana</option>
+		   <option value="IA">Iowa</option>
+		   <option value="KS">Kansas</option>
+		   <option value="KY">Kentucky</option>
+		   <option value="LA">Louisiana</option>
+		   <option value="ME">Maine</option>
+		   <option value="MD">Maryland</option>
+		   <option value="MA">Massachusetts</option>
+		   <option value="MI">Michigan</option>
+		   <option value="MN">Minnesota</option>
+		   <option value="MS">Mississippi</option>
+		   <option value="MO">Missouri</option>
+		   <option value="MT">Montana</option>
+ 		   <option value="NE">Nebraska</option>
+		   <option value="NV">Nevada</option>
+		   <option value="NH">New Hampshire</option>
+		   <option value="NJ">New Jersey</option>
+		   <option value="NM">New Mexico</option>
+		   <option value="NY">New York</option>
+		   <option value="NC">North Carolina</option>
+		   <option value="ND">North Dakota</option>
+		   <option value="OH">Ohio</option>
+		   <option value="OK">Oklahoma</option>
+		   <option value="OR">Oregon</option>
+		   <option value="PA">Pennsylvania</option>
+		   <option value="RI">Rhode Island</option>
+		   <option value="SC">South Carolina</option>
+		   <option value="SD">South Dakota</option>
+		   <option value="TN">Tennessee</option>
+		   <option value="TX">Texas</option>
+		   <option value="UT">Utah</option>
+		   <option value="VT">Vermont</option>
+		   <option value="VA">Virginia</option>
+		   <option value="WA">Washington</option>
+		   <option value="WV">West Virginia</option>
+		   <option value="WI">Wisconsin</option>
+		   <option value="WY">Wyoming</option>
+		 </select>
+ 
+	<div id="spacer">
+	  <input type="submit" value="Submit">
+	</div>
+	<div id="spacer">
+	  <table id="zipcode_table">
+	  </table>
+	  </div>
+     </div>
+ </div>
+
+
+</body>
+ <script>
+    function set_result(orig,dest) {
+    var x = document.getElementById(orig).value;
+    document.getElementById(dest).innerHTML = x;}
+
+    $(function() {
+        $( "#slider_income" ).slider({
+            range: "min",
+            min: 0,
+            max: 100,
+            value: 50,
+            slide: function( event, ui ) {
+                $( "#income" ).val( ui.value );
+    },
+            change: function( event, ui) {
+                $("#income_val").val(ui.value);
+                //set_result("income_val","income_result");
+
+
+}
+        });
+        $( "#income" ).val( $( "#slider_income" ).slider( "value" ) );
+    });
+
+    $(function() {
+        $( "#slider_housing" ).slider({
+            range: "min",
+            min: 0,
+            max: 100,
+            value: 50,
+            slide: function( event, ui ) {
+                $( "#housing" ).val( ui.value );
+    },
+            change: function( event, ui) {
+                $("#housing_val").val(ui.value);
+                //set_result("housing_val","housing_result");
+}
+        });
+        $( "#housing" ).val( $( "#slider_housing" ).slider( "value" ) );
+    });
+
+    $(function() {
+        $( "#slider_diversity" ).slider({
+            range: "min",
+            min: 0,
+            max: 100,
+            value: 50,
+            slide: function( event, ui ) {
+                $( "#diversity" ).val( ui.value );
+    },
+            change: function( event, ui) {
+                $("#diversity_val").val(ui.value);
+                //set_result("diversity_val","diversity_result");
+}
+        });
+        $( "#diversity" ).val( $( "#slider_diversity" ).slider( "value" ) );
+    });
+
+    $(function() {
+        $( "#slider_urbanization" ).slider({
+            range: "min",
+            min: 0,
+            max: 100,
+            value: 50,
+            slide: function( event, ui ) {
+                $( "#urbanization" ).val( ui.value );
+    },
+            change: function( event, ui) {
+                $("#urbanization_val").val(ui.value);
+                //set_result("ubanization_val","urbanization_result");
+}
+        });
+        $( "#urbanization" ).val( $( "#slider_urbanization" ).slider( "value" ) );
+    });
+
+    $(function() {
+    $( "#state-selectmenu" ).selectmenu({
+        change: function( event, ui) {
+        //alert ("You made a change");
+
+        }
+    })
+    .selectmenu( "menuWidget" )
+    .addClass( "selectmenu-overflow" );
+    });
+
+
+    $(function() {
+    $( "input[type=submit], a, button" )
+      .button()
+      .click(function( event ) {
+       event.preventDefault();
+
+       //Build url parameters string based upon values of sliders and state
+       var url_inc = document.getElementById("income_val").value;
+       var url_hou = document.getElementById("housing_val").value;
+       var url_div = document.getElementById("diversity_val").value;
+       var url_urb = document.getElementById("urbanization_val").value;
+       var url_state = $("#state-selectmenu option:selected").val();
+       var url_statename = $("#state-selectmenu option:selected").text();
+    
+       var url_parameter = "?income="+url_inc+"&housing="+url_hou+"&diversity="+url_div+"&urbanization="+url_urb+"&state="+url_state+"&statename="+url_statename;
+       console.log(url_parameter);
+
+        //render map
+        function parse(spec) {
+        vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
+            }
+        parse("/data/map"+url_parameter);
+
+       $("#zipcode_table caption").remove();
+       $("#zipcode_table tbody").remove();
+    
+       $("#zipcode_table").append("<caption>Your Top 5 Zip Codes</caption><tr><th>ZipCode</th><th>City,State</th></tr>"); 
+
+       //Get top 5 zip codes for table
+       var url = "/data/ziplist?state="+url_state;
+       $.getJSON(url,
+        function (data) {
+        var tr;
+        for (var i = 0; i < data.length; i++) {
+			    tr = $('<tr/>');
+                            tr.append("<td style='width:30px'>" + data[i].ZCTA5.substring(1,6) + "</td>");
+                            tr.append("<td style='width=400px'>" + data[i].ZIPName + "</td>");
+                            $("#zipcode_table").append(tr);
+			    }
+			    });
+
+
+			    
+
+
+});
+
+    
+  });
+
+    // parse a spec and create a visualization view
+    function parse(spec) {
+    vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
+}
+    parse("/data/init");
+
+
+        //var value = $("#state-selectmenu option:selected").text();
+        //var state_value = $("#state-selectmenu option:selected").val();      
+        //console.log("StateValueSelected: " + state_value);
+
+</script>
+
+</html>

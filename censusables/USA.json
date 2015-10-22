@@ -1,0 +1,139 @@
+{
+  "axes": [],
+  "data": [
+    {
+      "format": {
+        "feature": "us_states.geo",
+        "type": "topojson"
+      },
+      "name": "states",
+      "transform": [
+        {
+          "projection": "albersUsa",
+          "scale": 1100,
+          "translate": [
+            480,
+            250
+          ],
+          "type": "geopath",
+          "value": "data"
+        }
+      ],
+      "url": "us_states.topo.json"
+    },
+    {
+      "name": "table",
+      "values": [
+        {
+          "x": "83211",
+          "y": 6374
+        }
+      ]
+    },
+    {
+      "format": {
+        "feature": "zip_codes_for_the_usa",
+        "type": "topojson"
+      },
+      "name": "zip_codes",
+      "transform": [
+        {
+          "as": "value",
+          "default": "noval",
+          "key": "data.properties.zip",
+          "type": "zip",
+          "with": "table",
+          "withKey": "data.x"
+        },
+        {
+          "test": "d.path!='noval' && d.value!='noval'",
+          "type": "filter"
+        },
+        {
+          "projection": "albersUsa",
+          "scale": 1100,
+          "translate": [
+            480,
+            250
+          ],
+          "type": "geopath",
+          "value": "data"
+        }
+      ],
+      "url": "zips_us_topo.json"
+    }
+  ],
+  "height": 500,
+  "legends": [
+    {
+      "fill": "color",
+      "offset": 0,
+      "properties": {},
+      "title": "POPULATION"
+    }
+  ],
+  "marks": [
+    {
+      "from": {
+        "data": "states"
+      },
+      "properties": {
+        "enter": {
+          "path": {
+            "field": "path"
+          },
+          "stroke": {
+            "value": "#FF0000"
+          }
+        }
+      },
+      "type": "path"
+    },
+    {
+      "from": {
+        "data": "zip_codes"
+      },
+      "properties": {
+        "enter": {
+          "path": {
+            "field": "path"
+          },
+          "stroke": {
+            "value": "#000000"
+          }
+        },
+        "update": {
+          "fill": {
+            "field": "value.data.y",
+            "scale": "color",
+            "value": "#C390D4"
+          }
+        }
+      },
+      "type": "path"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": [
+        6374,
+        6374.0
+      ],
+      "name": "color",
+      "range": [
+        "#f7f4f9",
+        "#e7e1ef",
+        "#d4b9da",
+        "#c994c7",
+        "#df65b0",
+        "#e7298a",
+        "#ce1256",
+        "#980043",
+        "#67001f"
+      ],
+      "type": "quantize"
+    }
+  ],
+  "width": 960
+}
