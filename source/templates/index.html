@@ -303,13 +303,7 @@
        var url_statename = $("#state-selectmenu option:selected").text();
     
        var url_parameter = "?income="+url_inc+"&housing="+url_hou+"&diversity="+url_div+"&urbanization="+url_urb+"&state="+url_state+"&statename="+url_statename;
-       console.log(url_parameter);
-
-        //render map
-        function parse(spec) {
-        vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
-            }
-        parse("/data/map"+url_parameter);
+           //console.log(url_parameter);
 
        $("#zipcode_table caption").remove();
        $("#zipcode_table tbody").remove();
@@ -317,14 +311,28 @@
        $("#zipcode_table").append("<caption>Your Top 5 Zip Codes</caption><tr><th>ZipCode</th><th>City,State</th></tr>"); 
 
        //Get top 5 zip codes for table
-       var url = "/data/ziplist?state="+url_state;
+       var url = "/data/map" + url_parameter;
        $.getJSON(url,
         function (data) {
+
+       //render map
+
+        var map_json = data[0]
+        function parse(spec) {
+        vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
+            }
+        parse(map_json);
+
+        //Create Table
+            //console.log(data)
+            //console.log(data[0]);
+            //console.log(data[1]);
+        var table_data = data[1]
         var tr;
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < table_data.length; i++) {
 			    tr = $('<tr/>');
-                            tr.append("<td style='width:30px'>" + data[i].ZCTA5.substring(1,6) + "</td>");
-                            tr.append("<td style='width=400px'>" + data[i].ZIPName + "</td>");
+                            tr.append("<td style='width:30px'>" + table_data[i].ZCTA5.substring(1,6) + "</td>");
+                            tr.append("<td style='width=400px'>" + table_data[i].ZIPName + "</td>");
                             $("#zipcode_table").append(tr);
 			    }
 			    });
@@ -336,9 +344,8 @@
 });
 
     
-  });
-
-    // parse a spec and create a visualization view
+			    });
+      // parse a spec and create a visualization view
     function parse(spec) {
     vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
 }

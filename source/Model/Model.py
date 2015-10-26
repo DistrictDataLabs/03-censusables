@@ -10,6 +10,7 @@
 #
 ###############################################################################
 
+
 ################################################################################
 # Imports
 ################################################################################
@@ -56,12 +57,21 @@ def pca_analysis(indexname,dataframe):
     df_final = pd.DataFrame({'zip5':zip,indexname:Y_sklearn[:,0]})
     
     #Normalize Data on a 0 to 1 scale
-    zip5_final = df_final['zip5'].values
-    minmax_scale = preprocessing.MinMaxScaler().fit(df_final[[indexname]])
-    minmax = minmax_scale.transform(df_final[[indexname]])
-    df_minmax = pd.DataFrame({'zip5':zip5_final,indexname:minmax[:,0]})
+    #zip5_final = df_final['zip5'].values
+    #minmax_scale = preprocessing.MinMaxScaler().fit(df_final[[indexname]])
+    #minmax = minmax_scale.transform(df_final[[indexname]])
+    #df_minmax = pd.DataFrame({'zip5':zip5_final,indexname:minmax[:,0]})
 
-    return df_minmax    
+    return df_final
+
+def normalize_dataframe(dataframe):
+    zip5_final = dataframe['zip5'].values
+    minmax_scale = preprocessing.MinMaxScaler().fit(dataframe[['income_index', 'housing_index','urban_index','diversity_index']])
+    df_minmax = minmax_scale.transform(dataframe[['income_index', 'housing_index','urban_index','diversity_index']])
+    df_minmax_final = pd.DataFrame({'zip5':zip5_final,'income_index':df_minmax[:,0],'housing_index':df_minmax[:,1],'urban_index':df_minmax[:,2],'diversity_index':df_minmax[:,3]})
+
+    return df_minmax_final
+    
 
 ################################################################################
 # Main Execution
@@ -104,7 +114,7 @@ def main():
     housing_index = pd.merge (zillow_HVI, zillow_RI,how='inner', on='zip5').dropna(axis=0,how='all')
     housing_index.loc[housing_index['2014-07_x'].isnull(),'2014-07_x'] = housing_index['2014-01_x']
 
-    #Return Normalized PCA Dataframes
+    #Return PCA Dataframes
     df_inc = pca_analysis('income_index',income_index)    
     df_hou = pca_analysis('housing_index',housing_index)    
     #Reverse Housing Index so higher cost = higher index 
@@ -116,10 +126,15 @@ def main():
     df = pd.merge (df_inc,df_hou,on='zip5')
     df = pd.merge (df,df_urb,on='zip5')
     df = pd.merge (df,df_div,on='zip5')
+
+    #Normalize DataFrame
+        #This is done after the merge so we are only normalizing on zip codes that exist in all 4 data frames.
+    df_norm = normalize_dataframe (df)
+    
     
     #Add Zip Code Descriptions
     ZipCode = pd.read_csv(ZCTA)
-    df_all_final = pd.merge (df,ZipCode[['zcta5','ZIPName','State']],left_on='zip5',right_on='zcta5',copy=False)
+    df_all_final = pd.merge (df_norm,ZipCode[['zcta5','ZIPName','State']],left_on='zip5',right_on='zcta5',copy=False)
     del df_all_final['zcta5']
     df_all_final = pd.merge(df_all_final,urban[['zip5','ZCTA5']],copy=False)
 

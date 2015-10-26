@@ -45,6 +45,7 @@ def index():
 
 @app.route("/data/map")
 def data_map():
+    return_dict = {}
     income = request.args.get("income")
     housing = request.args.get("housing")
     diversity = request.args.get("diversity")
@@ -77,8 +78,25 @@ def data_map():
         del vis.marks[0].properties.update
         vis.marks[1].properties.enter.stroke_opacity = ValueRef(value=0.05)
         vis.marks[0].properties.enter.stroke.value = '#C0C0C0'
+
         vis.legend(title='Preferred ZipCode')
-        return vis.to_json()
+        return_dict[0] = json.loads(vis.to_json())
+        
+        ziplist = json.loads(df_final[['ZCTA5','ZIPName','fit']].sort(['fit']).reset_index().head(5).to_json())
+        table_data = []
+        for i in range (5):
+            dict_row = {}
+            dict_row['index'] = i
+            dict_row['ZCTA5'] = ziplist['ZCTA5'][str(i)]
+            dict_row['ZIPName'] = ziplist['ZIPName'][str(i)]
+            table_data.append(dict_row)
+        return_dict[1] = table_data
+        #with open ('data.json','w') as outfile:
+        #    json.dump(lst,outfile)
+
+        return json.dumps(return_dict)
+
+    
     else:
         zip_topo = r'/data/state_map?state='+statename
         feature_name = statename+r'.geo'
@@ -118,27 +136,19 @@ def data_map():
         #vis.marks[0].properties.enter.stroke.value = '#C0C0C0'
         vis.marks[1].properties.enter.stroke_opacity = ValueRef(value=0.5)
         #vis.legend(title='Preferred ZipCode')
-        return vis.to_json()
+        return_dict[0] = json.loads(vis.to_json())
 
-
-@app.route("/data/ziplist")
-def data_ziplist():
-    global df_final
-    state = request.args.get("state")
-    if state == "ZZ":
-        ziplist = json.loads(df_final[['ZCTA5','ZIPName','fit']].sort(['fit']).reset_index().head(5).to_json())
-    else:
         ziplist = json.loads(df_final[['ZCTA5','ZIPName','fit']][df_final['State']==state].sort(['fit']).reset_index().head(5).to_json())
+        table_data = []
+        for i in range (5):
+            dict_row = {}
+            dict_row['index'] = i
+            dict_row['ZCTA5'] = ziplist['ZCTA5'][str(i)]
+            dict_row['ZIPName'] = ziplist['ZIPName'][str(i)]
+            table_data.append(dict_row)
+        return_dict[1] = table_data
 
-    table_data = []
-    for i in range (5):
-        dict_row = {}
-        dict_row['index'] = i
-        dict_row['ZCTA5'] = ziplist['ZCTA5'][str(i)]
-        dict_row['ZIPName'] = ziplist['ZIPName'][str(i)]
-        table_data.append(dict_row)
-    return json.dumps(table_data)
-    
+        return json.dumps(return_dict)
 
 @app.route("/data/init")
 def data_init():
